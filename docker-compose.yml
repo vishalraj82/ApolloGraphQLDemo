@@ -1,0 +1,27 @@
+version: "3.1"
+
+services:
+    apollographql_server:
+        build:
+            context: ./server
+            args:
+                - 'INSTALL_DIR=$SERVER_INSTALL_DIR'
+        image: apollographql_server:0.1
+        restart: always
+        command: npm run start
+        volumes:
+            - ./server/src:${SERVER_INSTALL_DIR}/src
+        ports:
+            - 4000:4000
+        networks:
+            - apollographql_network
+
+networks:
+    apollographql_network:
+        driver: bridge
+        driver_opts:
+            com.docker.network.enable_ipv6: "false"
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.16.240.0/16

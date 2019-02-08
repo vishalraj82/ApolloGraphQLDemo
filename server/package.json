@@ -1,0 +1,30 @@
+{
+    "name": "apollographql-server",
+    "version": "1.0.0",
+    "description": "Apollo GraphQL Server Demo",
+    "main": "src/index.js",
+    "scripts": {
+        "test": "npm run test",
+        "start": "nodemon src/index.js",
+        "start:ci": "node src/index.js"
+    },
+    "author": "Vishal Raj <vishalraj82@gmail.com>",
+    "license": "ISC",
+    "dependencies": {
+        "apollo-server": "^2.2.0-alpha.2",
+        "apollo-datasource-rest": "^0.3.0",
+        "graphql": "^14.0.2",
+        "isemail": "^3.1.3",
+        "sequelize": "^4.39.0",
+        "sqlite3": "^4.0.3"
+    },
+    "devDependencies": {
+        "nodemon": "^1.18.4"
+    },
+    "jest": {
+        "testPathIgnorePatterns": [
+            "/node_modules/",
+            "/__utils"
+        ]
+    }
+}
